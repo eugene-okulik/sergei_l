@@ -1,4 +1,9 @@
-my_dict = {'tuple': ('a', 'b', 'c', 'd'), 'list': ['i', 'ii', 'iii', 'iv'], 'dict': {'a': 1, 'b': 2, 'c': 3, 'd': 4}, 'set': {'A1', 'B2', 'C3', 'D4'}}
+my_dict = {
+    'tuple': ('a', 'b', 'c', 'd'), 
+    'list': ['i', 'ii', 'iii', 'iv'], 
+    'dict': {'a': 1, 'b': 2, 'c': 3, 'd': 4}, 
+    'set': {'A1', 'B2', 'C3', 'D4'}
+}
 
 tuple_letters = my_dict['tuple']
 
@@ -15,8 +20,5 @@ set_cells.add('E5')
 set_cells.pop()
 
 print(f'Последнее значение кортежа внутри словаря: {tuple_letters[-1]}')
-# print(f'Измененные значения списка внутри словаря: {list_lat_nums}')
-# print(f'Измененные значения словаря внутри словаря: {dict_nums}')
-# print(f'Измененные значения словаря внутри словаря: {set_cells}')
 print(f'Измененные значения словаря: {my_dict}')
 
