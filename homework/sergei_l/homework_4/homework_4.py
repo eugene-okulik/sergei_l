@@ -12,7 +12,7 @@ list_lat_nums.append('v')
 list_lat_nums.pop(1)
 
 dict_nums = my_dict['dict']
-dict_nums['i am a tuple'] = 5
+dict_nums[('i am a tuple', )] = 5
 dict_nums.pop('d')
 
 set_cells = my_dict['set']
