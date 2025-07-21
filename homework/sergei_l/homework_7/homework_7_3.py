@@ -12,4 +12,3 @@ print(result_calc(string1))
 print(result_calc(string2))
 print(result_calc(string3))
 print(result_calc(string4))
-
