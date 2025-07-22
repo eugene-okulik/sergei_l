@@ -30,7 +30,7 @@ def fibonacci_result(num=1):
             break
         count += 1
     return fibonacci_number
-    
+
 
 print(f"Пятое число Фибоначчи: {fibonacci_result(5)}")
 print(f"Двухсотое число Фибоначчи: {fibonacci_result(200)}")
