@@ -3,7 +3,7 @@ def end_line(func):
     def wrapper(text):
         func(text)
         print("finished")
-        
+
     return wrapper
 
 
