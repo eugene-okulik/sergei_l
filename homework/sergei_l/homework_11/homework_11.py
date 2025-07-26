@@ -65,4 +65,3 @@ print_details(book_5)
 print_details(school_book_1)
 print_details(school_book_2)
 print_details(school_book_3)
-
