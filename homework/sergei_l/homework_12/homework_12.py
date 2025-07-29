@@ -15,9 +15,10 @@ class WhiteFlowers(Flowers):
 
 class RedFlowers(Flowers):
 
-   def __init__(self, name, life_time, cost):
+    def __init__(self, name, life_time, cost):
         super().__init__(name, life_time, cost)
         self.color = 'красный'
+
 
 class Bouquet:
 
