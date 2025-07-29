@@ -7,16 +7,17 @@ class Flowers:
 
 
 class WhiteFlowers(Flowers):
-    color = 'белый'
+
     def __init__(self, name, life_time, cost):
         super().__init__(name, life_time, cost)
+        self.color = 'белый'
 
 
 class RedFlowers(Flowers):
-    color = 'красный'
-    def __init__(self, name, life_time, cost):
-        super().__init__(name, life_time, cost)
 
+   def __init__(self, name, life_time, cost):
+        super().__init__(name, life_time, cost)
+        self.color = 'красный'
 
 class Bouquet:
 
@@ -47,8 +48,8 @@ class Bouquet:
 
 
 flower1 = WhiteFlowers('Роза', 7, 13)
-flower2 = RedFlowers('Орхидея',5, 3.5)
-flower3 = WhiteFlowers('Пион', 2,7)
+flower2 = RedFlowers('Орхидея', 5, 3.5)
+flower3 = WhiteFlowers('Пион', 2, 7)
 
 bouquet1 = Bouquet(flower1, flower2, flower3)
 
