@@ -12,10 +12,12 @@ class WhiteFlowers(Flowers):
     def __init__(self, name, life_time, cost):
         super().__init__(name, life_time, cost, 'белый')
 
+
 class RedFlowers(Flowers):
 
     def __init__(self, name, life_time, cost):
         super().__init__(name, life_time, cost, 'красный')
+
 
 class Bouquet:
 
