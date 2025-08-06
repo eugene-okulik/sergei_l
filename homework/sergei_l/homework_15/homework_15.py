@@ -2,11 +2,11 @@ import mysql.connector as mysql
 
 
 db = mysql.connect(
-    user = 'st-onl',
-    passwd = 'AVNS_tegPDkI5BlB2lW5eASC',
-    host = 'db-mysql-fra1-09136-do-user-7651996-0.b.db.ondigitalocean.com',
-    port = 25060,
-    database = 'st-onl'
+    user='st-onl',
+    passwd='AVNS_tegPDkI5BlB2lW5eASC',
+    host='db-mysql-fra1-09136-do-user-7651996-0.b.db.ondigitalocean.com',
+    port=25060,
+    database='st-onl'
 )
 
 cursor = db.cursor()
@@ -70,18 +70,18 @@ db.commit()
 student_id_value = [student_id]
 cursor.execute(
     '''
-    SELECT value FROM marks 
-    JOIN students ON marks.student_id = students.id 
+    SELECT value FROM marks
+    JOIN students ON marks.student_id = students.id
     WHERE students.id = %s
     ''', student_id_value
-    )
+)
 get_student_marks = cursor.fetchall()
 print(get_student_marks)
 
 cursor.execute(
     '''
-    SELECT title FROM books 
-    JOIN students ON books.taken_by_student_id = students.id 
+    SELECT title FROM books
+    JOIN students ON books.taken_by_student_id = students.id
     WHERE students.id = %s
     ''', student_id_value
 )
@@ -89,14 +89,15 @@ get_student_books = cursor.fetchall()
 print(get_student_books)
 
 cursor.execute(
-    '''SELECT s.name, s.second_name, b.title, g.title, m.`value`, l.title, sub.title
+    '''
+    SELECT s.name, s.second_name, b.title, g.title, m.`value`, l.title, sub.title
     FROM students AS s
-    JOIN books AS b ON s.id = b.taken_by_student_id 
-    JOIN `groups` AS g ON s.group_id = g.id 
+    JOIN books AS b ON s.id = b.taken_by_student_id
+    JOIN `groups` AS g ON s.group_id = g.id
     JOIN marks AS m ON s.id = m.student_id
     JOIN lessons AS l ON m.lesson_id = l.id
     JOIN subjects AS sub ON l.subject_id = sub.id
-    WHERE s.id = %s;
+    WHERE s.id = %s
 ''', student_id_value
 )
 get_all_student_data = cursor.fetchall()
