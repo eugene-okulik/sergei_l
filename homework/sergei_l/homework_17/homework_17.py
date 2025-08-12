@@ -33,6 +33,6 @@ for line in file_path():
         words = row.split()
         for index, word in enumerate(words):
             if args.text == word:
-                result = ' '.join(words[index-5:index] + words[index:index+6])
+                result = ' '.join(words[index - 5:index] + words[index:index + 6])
                 print(f"On line {line_number}: {result}")
         line_number += 1
