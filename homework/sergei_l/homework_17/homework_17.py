@@ -22,7 +22,10 @@ def file_path():
     elif os.path.isdir(args.file):
         file_list = os.listdir(args.file)
         for file in file_list:
-            path_list.append(args.file + file)
+            if args.file.endswith(os.path.sep):
+                path_list.append(args.file + file)
+            else:
+                path_list.append(args.file + os.path.sep + file)
         return path_list
 
 
@@ -33,6 +36,9 @@ for line in file_path():
         words = row.split()
         for index, word in enumerate(words):
             if args.text == word:
-                result = ' '.join(words[index - 5:index] + words[index:index + 6])
+                if index >= 5:
+                    result = ' '.join(words[index - 5:index] + words[index:index + 6])
+                else:
+                    result = ' '.join(words[:index] + words[index:index + 6])
                 print(f"On line {line_number}: {result}")
         line_number += 1
