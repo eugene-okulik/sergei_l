@@ -82,4 +82,3 @@ def test_patch_object(create_delete_test_object, each_test_text):
 def test_delete_object(create_test_object, each_test_text):
     request = requests.delete(f'http://objapi.course.qa-practice.com/object/{create_test_object}')
     assert request.status_code == 200, "Wrong status code"
-
