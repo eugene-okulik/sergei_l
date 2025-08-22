@@ -1,8 +1,5 @@
 import pytest
 
-from conftest import create_object_endpoint
-
-
 @pytest.mark.parametrize('object_name', ['first_test_name', 'second_test_name', 'third_test_name'])
 def test_create_object(create_object_endpoint, delete_object_endpoint, object_name):
     body = {
@@ -41,5 +38,12 @@ def test_patch_object(create_object_endpoint, patch_object_endpoint, delete_obje
     create_object_endpoint.assert_response_status()
     patch_object_endpoint.patch_object(create_object_endpoint.object_id, body)
     patch_object_endpoint.assert_response_status()
+    delete_object_endpoint.delete_object(create_object_endpoint.object_id)
+    delete_object_endpoint.assert_response_status()
+
+
+def test_delete_object(create_object_endpoint, delete_object_endpoint):
+    create_object_endpoint.create_object()
+    create_object_endpoint.assert_response_status()
     delete_object_endpoint.delete_object(create_object_endpoint.object_id)
     delete_object_endpoint.assert_response_status()
