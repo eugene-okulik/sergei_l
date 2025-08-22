@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.mark.parametrize('object_name', ['first_test_name', 'second_test_name', 'third_test_name'])
 def test_create_object(create_object_endpoint, delete_object_endpoint, object_name):
     body = {
