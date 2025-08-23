@@ -13,7 +13,7 @@ class Endpoint:
         }
     }
 
-    @allure.step('Checking if response is correct')
-    def assert_response_status(self):
+    @allure.step('Checking if response status is 200')
+    def assert_response_status_is_200(self):
         print(self.response)
         assert self.response.status_code == 200, 'Wrong status code'

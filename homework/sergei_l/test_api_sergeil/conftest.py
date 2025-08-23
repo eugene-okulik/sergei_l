@@ -24,3 +24,19 @@ def put_object_endpoint():
 @pytest.fixture()
 def patch_object_endpoint():
     return PatchObject()
+
+
+@pytest.fixture()
+def create_delete_test_object(create_object_endpoint, delete_object_endpoint):
+    create_object_endpoint.create_object()
+    create_object_endpoint.assert_response_status_is_200()
+    yield create_object_endpoint.object_id
+    delete_object_endpoint.delete_object(create_object_endpoint.object_id)
+    delete_object_endpoint.assert_response_status_is_200()
+
+
+@pytest.fixture()
+def create_test_object(create_object_endpoint):
+    create_object_endpoint.create_object()
+    create_object_endpoint.assert_response_status_is_200()
+    return create_object_endpoint.object_id
