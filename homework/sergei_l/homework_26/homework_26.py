@@ -18,15 +18,18 @@ def driver():
     chrome_driver = webdriver.Chrome(options=chrome_options)
     return chrome_driver
 
+
 @pytest.fixture()
 def action(driver):
     action = ActionChains(driver)
     return action
 
+
 @pytest.fixture()
 def wait(driver):
     wait = WebDriverWait(driver, 5)
     return wait
+
 
 def test_add_to_cart(driver, action, wait):
     driver.get('http://testshop.qa-practice.com/')
@@ -51,6 +54,7 @@ def test_add_to_cart(driver, action, wait):
     wait.until(EC.visibility_of_element_located((By.TAG_NAME, 'h6')))
     product_name_final = driver.find_elements(By.TAG_NAME, 'h6')
     assert product_name in product_name_final[0].text
+
 
 def test_hover_product(driver, action, wait):
     driver.get('http://testshop.qa-practice.com/')
