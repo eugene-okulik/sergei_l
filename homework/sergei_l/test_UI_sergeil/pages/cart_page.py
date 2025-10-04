@@ -6,7 +6,6 @@ from playwright.sync_api import expect
 class CartPage(BasePage):
     page_url = '/cart'
 
-
     def is_cart_title_correct(self):
         title = self.find(cart_page_locators.page_title)
         expect(title).to_have_text('Order overview')

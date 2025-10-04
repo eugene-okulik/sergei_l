@@ -6,7 +6,6 @@ from playwright.sync_api import expect
 class ProductListingPage(BasePage):
     page_url = '/category/desks-1'
 
-
     def add_product_to_the_cart_from_plp(self):
         product_card = self.find(product_listing_page_locators.product_card).first
         add_to_cart_icon = self.find(product_listing_page_locators.cart_icon).first

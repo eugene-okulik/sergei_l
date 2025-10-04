@@ -9,7 +9,6 @@ class ProductDetailsPage(BasePage):
     product_price = None
     product_qty = None
 
-
     def add_product_to_cart(self):
         self.product_name = self.find(product_details_page_locators.product_name).text_content()
         self.product_price = self.find(product_details_page_locators.product_price).text_content()

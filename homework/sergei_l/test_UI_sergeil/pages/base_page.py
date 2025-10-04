@@ -6,7 +6,6 @@ class BasePage:
     base_url = 'http://testshop.qa-practice.com/shop'
     page_url = None
 
-
     def __init__(self, page: Page):
         self.page = page
 
